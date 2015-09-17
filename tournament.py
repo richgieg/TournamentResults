@@ -16,20 +16,45 @@ def connect():
     return psycopg2.connect("dbname=tournament")
 
 
+def _query(query, commit=False):
+    """Executes a query against the PostgreSQL database.
+
+    This is an internal helper function that will execute a query against the
+    PostgreSQL database. If the commit argument is False, then the function will
+    return the results. Otherwise, the function will commit the changes to the
+    database and return an empty list.
+
+    Args:
+        query: The query string to execute against the database.
+        commit: If true, changes are committed (OPTIONAL, default is False).
+
+    Returns:
+        If the commit argument is False (default), then the function returns a
+        list containing the resulting rows from the execution of the query.
+        Otherwise, the function returns an empty list.
+    """
+    results = []
+    db = connect()
+    cursor = db.cursor()
+    cursor.execute(query)
+    if commit:
+        db.commit()
+    else:
+        results = cursor.fetchall()
+    db.close()
+    return results
+
+
 def _clearTable(table):
     """Remove all the records from a table.
 
-    This is a private helper function that will remove all the records from the
-    table specified in the table argument.
+    This is an internal helper function that will remove all the records from
+    the table specified in the table argument.
 
-    Arguments:
+    Args:
         table: The name of the table from which to remove all records.
     """
-    db = connect()
-    cursor = db.cursor()
-    cursor.execute("delete from " + table)
-    db.commit()
-    db.close()
+    _query("delete from " + table, True)
 
 
 def deleteMatches():
@@ -44,6 +69,8 @@ def deletePlayers():
 
 def countPlayers():
     """Returns the number of players currently registered."""
+    db = connect()
+    cursor = db.cursor()
 
 
 
