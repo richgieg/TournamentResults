@@ -101,6 +101,7 @@ def playerStandings():
             wins: The number of matches the player has won.
             matches: The number of matches the player has played.
     """
+    return _query("SELECT * FROM player_standings")
 
 
 def reportMatch(winner, loser):
