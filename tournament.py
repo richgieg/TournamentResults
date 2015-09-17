@@ -110,6 +110,9 @@ def reportMatch(winner, loser):
         winner: The id number of the player who won.
         loser: The id number of the player who lost.
     """
+    query = "INSERT INTO " + _MATCH_TABLE + " (winner, loser) VALUES (%s, %s)"
+    values = (winner, loser)
+    _query(query, values, True)
 
 
 def swissPairings():
