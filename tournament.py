@@ -16,7 +16,7 @@ def connect():
     return psycopg2.connect("dbname=tournament")
 
 
-def _query(query, commit=False):
+def _query(query, commit=False, values=()):
     """Executes a query against the PostgreSQL database.
 
     This is an internal helper function that will execute a query against the
@@ -27,6 +27,8 @@ def _query(query, commit=False):
     Args:
         query: The query string to execute against the database.
         commit: If true, changes are committed (OPTIONAL, default is False).
+        values: A tuple containing the values to substitute into the query
+                string (OPTIONAL, default is an empty tuple).
 
     Returns:
         If the commit argument is False (default), then the function returns a
@@ -36,7 +38,7 @@ def _query(query, commit=False):
     results = []
     db = connect()
     cursor = db.cursor()
-    cursor.execute(query)
+    cursor.execute(query, values)
     if commit:
         db.commit()
     else:
@@ -82,6 +84,7 @@ def registerPlayer(name):
     Args:
         name: The player's full name (need not be unique).
     """
+    _query("INSERT INTO")
 
 
 def playerStandings():
