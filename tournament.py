@@ -54,7 +54,7 @@ def _clearTable(table):
     Args:
         table: The name of the table from which to remove all records.
     """
-    _query("delete from " + table, True)
+    _query("DELETE FROM " + table, True)
 
 
 def deleteMatches():
