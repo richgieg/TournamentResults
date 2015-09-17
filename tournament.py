@@ -84,7 +84,8 @@ def registerPlayer(name):
     Args:
         name: The player's full name (need not be unique).
     """
-    _query("INSERT INTO")
+    values = (name,)
+    _query("INSERT INTO players (name) VALUES (%s)", values, True)
 
 
 def playerStandings():
