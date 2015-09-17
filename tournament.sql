@@ -29,3 +29,10 @@ SELECT players.id, COUNT(matches.winner) AS matches
 FROM players LEFT JOIN matches
 ON players.id = matches.winner OR players.id = matches.loser
 GROUP BY players.id;
+
+-- Create view for player standings.
+CREATE VIEW player_standings AS
+SELECT players.id, players.name, player_wins.wins, player_matches.matches
+FROM players, player_wins, player_matches
+WHERE players.id = player_wins.id AND players.id = player_matches.id
+ORDER BY player_wins.wins DESC;
