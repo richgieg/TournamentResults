@@ -15,4 +15,5 @@ code that will use it."
 ## Instructions
 1. Make sure you have Python installed on your system.
 2. Download the code and extract it into a directory of your choice.
-3. Run ```python tournament_test.py``` to execute the test cases agains my code.
+3. Run ```python tournament_test.py``` to execute the test cases against my
+code.
