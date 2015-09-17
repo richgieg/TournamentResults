@@ -6,6 +6,11 @@
 import psycopg2
 
 
+# Define the table names.
+_PLAYER_TABLE = "players"
+_MATCH_TABLE = "matches"
+
+
 def connect():
     """Connect to the PostgreSQL database.  Returns a database connection."""
     return psycopg2.connect("dbname=tournament")
@@ -29,11 +34,12 @@ def _clearTable(table):
 
 def deleteMatches():
     """Remove all the match records from the database."""
-    _clearTable("matches")
+    _clearTable(_MATCH_TABLE)
 
 
 def deletePlayers():
     """Remove all the player records from the database."""
+    _clearTable(_PLAYER_TABLE)
 
 
 def countPlayers():
