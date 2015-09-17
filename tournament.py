@@ -16,7 +16,7 @@ def connect():
     return psycopg2.connect("dbname=tournament")
 
 
-def _query(query, commit=False, values=()):
+def _query(query, values=(), commit=False):
     """Executes a query against the PostgreSQL database.
 
     This is an internal helper function that will execute a query against the
@@ -26,9 +26,9 @@ def _query(query, commit=False, values=()):
 
     Args:
         query: The query string to execute against the database.
-        commit: If true, changes are committed (OPTIONAL, default is False).
         values: A tuple containing the values to substitute into the query
                 string (OPTIONAL, default is an empty tuple).
+        commit: If true, changes are committed (OPTIONAL, default is False).
 
     Returns:
         If the commit argument is False (default), then the function returns a
@@ -56,7 +56,7 @@ def _clearTable(table):
     Args:
         table: The name of the table from which to remove all records.
     """
-    _query("DELETE FROM " + table, True)
+    _query("DELETE FROM " + table, commit=True)
 
 
 def deleteMatches():
