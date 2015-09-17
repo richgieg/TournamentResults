@@ -11,13 +11,25 @@ def connect():
     return psycopg2.connect("dbname=tournament")
 
 
-def deleteMatches():
-    """Remove all the match records from the database."""
+def _clearTable(table):
+    """Remove all the records from a table.
+
+    This is a private helper function that will remove all the records from the
+    table specified in the table argument.
+
+    Arguments:
+        table: The name of the table from which to remove all records.
+    """
     db = connect()
     cursor = db.cursor()
-    cursor.execute("delete from matches")
+    cursor.execute("delete from " + table)
     db.commit()
     db.close()
+
+
+def deleteMatches():
+    """Remove all the match records from the database."""
+    _clearTable("matches")
 
 
 def deletePlayers():
