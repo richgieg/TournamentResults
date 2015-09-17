@@ -15,3 +15,10 @@ CREATE TABLE matches (
     winner integer references players(id),
     loser integer references players(id)
 );
+
+-- Create view for finding number of wins per player.
+CREATE VIEW player_wins AS
+SELECT players.id, COUNT(matches.winner) AS wins
+FROM players LEFT JOIN matches
+ON players.id = matches.winner
+GROUP BY players.id;
