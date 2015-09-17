@@ -12,7 +12,7 @@ _MATCH_TABLE = "matches"
 
 
 def connect():
-    """Connect to the PostgreSQL database.  Returns a database connection."""
+    """Connect to the PostgreSQL database. Returns a database connection."""
     return psycopg2.connect("dbname=tournament")
 
 
@@ -46,6 +46,7 @@ def countPlayers():
     """Returns the number of players currently registered."""
 
 
+
 def registerPlayer(name):
     """Adds a player to the tournament database.
 
@@ -53,7 +54,7 @@ def registerPlayer(name):
     should be handled by your SQL database schema, not in your Python code.)
 
     Args:
-      name: the player's full name (need not be unique).
+        name: The player's full name (need not be unique).
     """
 
 
@@ -64,11 +65,11 @@ def playerStandings():
     tied for first place if there is currently a tie.
 
     Returns:
-      A list of tuples, each of which contains (id, name, wins, matches):
-        id: the player's unique id (assigned by the database)
-        name: the player's full name (as registered)
-        wins: the number of matches the player has won
-        matches: the number of matches the player has played
+        A list of tuples, each of which contains (id, name, wins, matches):
+            id: The player's unique id (assigned by the database).
+            name: The player's full name (as registered).
+            wins: The number of matches the player has won.
+            matches: The number of matches the player has played.
     """
 
 
@@ -76,8 +77,8 @@ def reportMatch(winner, loser):
     """Records the outcome of a single match between two players.
 
     Args:
-      winner:  the id number of the player who won
-      loser:  the id number of the player who lost
+        winner: The id number of the player who won.
+        loser: The id number of the player who lost.
     """
 
 
@@ -85,16 +86,16 @@ def swissPairings():
     """Returns a list of pairs of players for the next round of a match.
 
     Assuming that there are an even number of players registered, each player
-    appears exactly once in the pairings.  Each player is paired with another
+    appears exactly once in the pairings. Each player is paired with another
     player with an equal or nearly-equal win record, that is, a player adjacent
     to him or her in the standings.
 
     Returns:
-      A list of tuples, each of which contains (id1, name1, id2, name2)
-        id1: the first player's unique id
-        name1: the first player's name
-        id2: the second player's unique id
-        name2: the second player's name
+        A list of tuples, each of which contains (id1, name1, id2, name2).
+            id1: The first player's unique id.
+            name1: The first player's name.
+            id2: The second player's unique id.
+            name2: The second player's name.
     """
 
 
