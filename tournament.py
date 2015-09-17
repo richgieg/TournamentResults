@@ -9,7 +9,7 @@ import psycopg2
 # Define the table names.
 _PLAYER_TABLE = "players"
 _MATCH_TABLE = "matches"
-
+_PLAYER_STANDINGS_VIEW = "player_standings"
 
 def connect():
     """Connect to the PostgreSQL database. Returns a database connection."""
@@ -100,7 +100,7 @@ def playerStandings():
             wins: The number of matches the player has won.
             matches: The number of matches the player has played.
     """
-    return _query("SELECT * FROM player_standings")
+    return _query("SELECT * FROM " + _PLAYER_STANDINGS_VIEW)
 
 
 def reportMatch(winner, loser):
