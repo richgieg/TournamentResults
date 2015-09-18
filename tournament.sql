@@ -45,8 +45,8 @@ FROM player_standings;
 
 -- Create view for next pairing.
 -- This code performs a self join on the player_standings_row_numbers view,
--- utilizing the row numbers to form records containing info for the players
--- from each pair of adjacent records in the player_standings view.
+-- utilizing the row numbers as a guide to form records containing info for the
+-- players from each pair of adjacent records in the player_standings view.
 CREATE VIEW next_pairing AS
 SELECT a.id AS id1, a.name AS name1, b.id AS id2, b.name AS name2
 FROM player_standings_row_numbers AS a, player_standings_row_numbers AS b
