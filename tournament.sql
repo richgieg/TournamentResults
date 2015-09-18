@@ -39,6 +39,6 @@ ORDER BY player_wins.wins DESC;
 
 -- Create view for next pairing.
 CREATE VIEW next_pairing AS
-SELECT a.id AS id1, b.id AS id2
+SELECT a.id AS id1, a.name AS name1, b.id AS id2, b.name AS name2
 FROM player_standings AS a, player_standings AS b
 WHERE a.wins = b.wins AND a.id < b.id;
