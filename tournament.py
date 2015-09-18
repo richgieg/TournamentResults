@@ -6,10 +6,12 @@
 import psycopg2
 
 
-# Define the table names.
+# Define internal constants for table and view names.
 _PLAYER_TABLE = "players"
 _MATCH_TABLE = "matches"
 _PLAYER_STANDINGS_VIEW = "player_standings"
+_NEXT_PAIRING_VIEW = "next_pairing"
+
 
 def connect():
     """Connect to the PostgreSQL database. Returns a database connection."""
@@ -130,5 +132,4 @@ def swissPairings():
             id2: The second player's unique id.
             name2: The second player's name.
     """
-
-
+    return _query("SELECT * FROM " + _NEXT_PAIRING_VIEW)
