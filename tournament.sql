@@ -36,3 +36,9 @@ SELECT players.id, players.name, player_wins.wins, player_matches.matches
 FROM players, player_wins, player_matches
 WHERE players.id = player_wins.id AND players.id = player_matches.id
 ORDER BY player_wins.wins DESC;
+
+-- Create view for next pairing.
+CREATE VIEW next_pairing AS
+SELECT a.id AS id1, b.id AS id2
+FROM player_standings AS a, player_standings AS b
+WHERE a.wins = b.wins AND a.id < b.id;
