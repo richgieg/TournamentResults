@@ -38,7 +38,16 @@ WHERE players.id = player_wins.id AND players.id = player_matches.id
 ORDER BY player_wins.wins DESC;
 
 -- Create view for next pairing.
+-- This code performs a pseudo self-join on two identical subqueries (which use
+-- the row_number() function) in order to form records containing info for the
+-- players from each pair of adjacent records in the player_standings view.
 CREATE VIEW next_pairing AS
 SELECT a.id AS id1, a.name AS name1, b.id AS id2, b.name AS name2
-FROM player_standings AS a, player_standings AS b
-WHERE a.wins = b.wins AND a.id < b.id;
+FROM (
+    SELECT row_number() over() AS row, id, name
+    FROM player_standings
+) AS a, (
+    SELECT row_number() over() AS row, id, name
+    FROM player_standings
+) AS b
+WHERE (a.row % 2 = 0) AND (b.row = a.row - 1);
