@@ -50,4 +50,4 @@ FROM (
     SELECT row_number() over() AS row, id, name
     FROM player_standings
 ) AS b
-WHERE (a.row % 2 = 0) AND (b.row = a.row - 1);
+WHERE (a.row % 2 = 1) AND (b.row = a.row + 1);
