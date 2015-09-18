@@ -16,6 +16,7 @@ code that will use it."
 1. You must have Python installed on your system.
 2. You must have PostgreSQL on your system.
 3. Download the code and extract it into a directory of your choice.
-4. Run ```psql -f tournament.sql``` to create the database and tables.
-5. Run ```python tournament_test.py``` to execute the test cases against my
+4. In a terminal, navigate to that directory.
+5. Run ```psql -f tournament.sql``` to create the database and tables.
+6. Run ```python tournament_test.py``` to execute the test cases against my
 code.
