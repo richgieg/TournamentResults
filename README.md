@@ -12,10 +12,35 @@ parts: defining the database schema (SQL table definitions), and writing the
 code that will use it."
 
 ----
-## Install VirtualBox
+## Install VirtualBox 4.3
+VirtualBox 4.3 is required for Vagrant to function. The steps for installing it
+vary depending on your operating system. You can find the installers for many
+operating systems [here](https://www.virtualbox.org/wiki/Download_Old_Builds_4_3).
+
+If you happen to be using Ubuntu 15.04 (as I did for this project), you can try
+this terminal command:
+```
+sudo apt-get install virtualbox-4.3
+```
+
+*This command will probably work for other versions of Ubuntu as well.*
 
 ----
 ## Install Vagrant
+Vagrant is required to manage the virtual machine (VM) used for executing this
+project. The VM image is automatically fetched by Vagrant when the VM is
+powered up the first time. The VM comes preconfigured with Python and
+PostgreSQL. The steps for installing Vagrant vary depending on your operating
+system. You can find the installers for many operating systems
+[here](https://www.vagrantup.com/downloads.html).
+
+If you happen to be using Ubuntu 15.04 (as I did for this project), you can try
+this terminal command:
+```
+sudo apt-get install vagrant
+```
+
+*This command will probably work for other versions of Ubuntu as well.*
 
 ----
 ## Run the Test Suite
