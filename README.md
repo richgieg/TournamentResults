@@ -75,6 +75,20 @@ examined in order to determine which unit test failed. With this vital
 information, one should be able to easily track down the problem in the code
 (if a problem happened to be present).*
 
+Example of the expected output:
+```
+1. Old matches can be deleted.
+2. Player records can be deleted.
+3. After deleting, countPlayers() returns zero.
+4. After registering a player, countPlayers() returns 1.
+5. Players can be registered and deleted.
+6. Newly registered players appear in the standings with no matches.
+7. After a match, players have updated standings.
+8. After one match, players with one win are paired.
+Success!  All tests pass!
+
+```
+
 **Exit the SSH session and shutdown the VM:**
 ```
 exit
