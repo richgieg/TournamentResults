@@ -21,7 +21,9 @@ code that will use it."
 ## Run the Test Suite
 Use a command line terminal for the following steps.
 
-Clone the repository to your local system:
+Clone the repository to your local system, launch the VM, then connect to the VM
+via SSH:
+
 ```
 git clone http://github.com/richgieg/TournamentResults
 ```
@@ -33,22 +35,12 @@ cd TournamentResults/vagrant
 vagrant up
 ```
 
-Connect to the VM via SSH:
+Connect to the VM via SSH, create the database, then run the test suite:
 
 ```
 vagrant ssh
-```
-
-Create the tournament database:
-
-```
 cd /vagrant/tournament
 psql -f tournament.sql
-```
-
-Run the tournament test suite:
-
-```
 python tournament_test.py
 ```
 
