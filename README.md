@@ -11,6 +11,8 @@ with the same number of wins, or as close as possible. This project has two
 parts: defining the database schema (SQL table definitions), and writing the
 code that will use it."
 
+To execute this project, please follow the steps in the sections below.
+
 ----
 ## Install VirtualBox 4.3
 VirtualBox 4.3 is required for Vagrant to function. The steps for installing it
@@ -68,9 +70,10 @@ python tournament_test.py
 ```
 
 *If all tests were successfully executed, the last line of output should be
-"Success!  All tests pass!" If that is not the case, then examine the output to
-determine which unit test failed. With this vital information, you should be
-able to easily track down the problem in the code.*
+"Success!  All tests pass!" If that is not the case, then the output can be
+examined in order to determine which unit test failed. With this vital
+information, one should be able to easily track down the problem in the code
+(if a problem happened to be present).*
 
 **Exit the SSH session and shutdown the VM:**
 ```
