@@ -42,6 +42,11 @@ psql -f tournament.sql
 python tournament_test.py
 ```
 
+*If all tests were successfully executed, the last line of output should be
+"Success!  All tests pass!" If that is not the case, then examine the output to
+determine which unit test failed. With this vital information, you will be able
+to more easily track down the problem in the code.*
+
 Exit the SSH session and shutdown the VM:
 ```
 exit
