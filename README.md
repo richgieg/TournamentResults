@@ -16,7 +16,7 @@ To execute this project, please follow the steps in the sections below.
 ----
 ## Install VirtualBox 4.3
 VirtualBox 4.3 is required for Vagrant to function. The steps for installing it
-vary depending on your operating system. You can find the installers for many
+vary depending on your operating system. You can find the installer for many
 operating systems [here](https://www.virtualbox.org/wiki/Download_Old_Builds_4_3).
 
 If you happen to be using Ubuntu 15.04 (as I did for this project), you can try
@@ -33,7 +33,7 @@ Vagrant is required to manage the virtual machine (VM) used for executing this
 project. The VM image is automatically fetched by Vagrant when the VM is
 powered up the first time. The VM comes preconfigured with Python and
 PostgreSQL. The steps for installing Vagrant vary depending on your operating
-system. You can find the installers for many operating systems
+system. You can find the installer for many operating systems
 [here](https://www.vagrantup.com/downloads.html).
 
 If you happen to be using Ubuntu 15.04 (as I did for this project), you can try
