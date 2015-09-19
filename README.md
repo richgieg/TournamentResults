@@ -14,14 +14,14 @@ code that will use it."
 ----
 ## Install VirtualBox
 
-
+----
 ## Install Vagrant
 
-
+----
 ## Run the Test Suite
 Use a command line terminal for the following steps.
 
-Clone the repository to your local system, then launch the VM:
+**Clone the repository to your local system, then launch the VM:**
 ```
 git clone http://github.com/richgieg/TournamentResults
 cd TournamentResults/vagrant
@@ -34,7 +34,7 @@ configuration must take place. Please be patient. Once the process is complete,
 your terminal prompt will be returned, thus allowing you to execute the next
 steps.*
 
-Connect to the VM via SSH, create the database, then run the test suite:
+**Connect to the VM via SSH, create the database, then run the test suite:**
 ```
 vagrant ssh
 cd /vagrant/tournament
@@ -47,7 +47,7 @@ python tournament_test.py
 determine which unit test failed. With this vital information, you should be
 able to easily track down the problem in the code.*
 
-Exit the SSH session and shutdown the VM:
+**Exit the SSH session and shutdown the VM:**
 ```
 exit
 vagrant halt
