@@ -86,8 +86,8 @@ Example of the expected output:
 7. After a match, players have updated standings.
 8. After one match, players with one win are paired.
 Success!  All tests pass!
-
 ```
+
 **Exit the SSH session and shutdown the VM:**
 ```
 exit
