@@ -50,7 +50,7 @@ Use a command line terminal for the following steps.
 
 **Clone the repository to your local system, then launch the VM:**
 ```
-git clone http://github.com/richgieg/TournamentResults.git
+git clone https://github.com/richgieg/TournamentResults.git
 cd TournamentResults/vagrant
 vagrant up
 ```
