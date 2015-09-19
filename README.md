@@ -23,20 +23,17 @@ Use a command line terminal for the following steps.
 
 Clone the repository to your local system, launch the VM, then connect to the VM
 via SSH:
-
 ```
 git clone http://github.com/richgieg/TournamentResults
 ```
 
 Launch the VM:
-
 ```
 cd TournamentResults/vagrant
 vagrant up
 ```
 
 Connect to the VM via SSH, create the database, then run the test suite:
-
 ```
 vagrant ssh
 cd /vagrant/tournament
@@ -45,7 +42,6 @@ python tournament_test.py
 ```
 
 Exit the SSH session and shutdown the VM:
-
 ```
 exit
 vagrant halt
