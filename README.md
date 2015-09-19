@@ -49,7 +49,8 @@ sudo apt-get install vagrant
 Use a command line terminal for the following steps.
 
 **Clone the repository to your local system, then launch the VM:**
-```git clone http://github.com/richgieg/TournamentResults.git
+```
+git clone http://github.com/richgieg/TournamentResults.git
 cd TournamentResults/vagrant
 vagrant up
 ```
@@ -61,7 +62,8 @@ your terminal prompt will be returned, thus allowing you to execute the next
 steps.*
 
 **Connect to the VM via SSH, create the database, then run the test suite:**
-```vagrant ssh
+```
+vagrant ssh
 cd /vagrant/tournament
 psql -f tournament.sql
 python tournament_test.py
@@ -74,7 +76,8 @@ information, one should be able to easily track down the problem in the code
 (if a problem happened to be present).*
 
 Example of the expected output:
-```1. Old matches can be deleted.
+```
+1. Old matches can be deleted.
 2. Player records can be deleted.
 3. After deleting, countPlayers() returns zero.
 4. After registering a player, countPlayers() returns 1.
