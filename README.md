@@ -12,11 +12,38 @@ parts: defining the database schema (SQL table definitions), and writing the
 code that will use it."
 
 ----
-## Instructions
-1. You must have Python installed on your system.
-2. You must have PostgreSQL on your system.
-3. Download the code and extract it into a directory of your choice.
-4. In a terminal, navigate to that directory.
-5. Run ```psql -f tournament.sql``` to create the database and tables.
-6. Run ```python tournament_test.py``` to execute the test cases against my
-code.
+## Install VirtualBox
+
+
+## Install Vagrant
+
+
+## Run the Test Suite
+Use a command line terminal for the following steps.
+
+Clone the repository to your local system:
+
+    git clone http://github.com/richgieg/TournamentResults
+
+Launch the VM:
+
+    cd TournamentResults/vagrant
+    vagrant up
+
+Connect to the VM via SSH:
+
+    vagrant ssh
+
+Create the tournament database:
+
+    cd /vagrant/tournament
+    psql -f tournament.sql
+
+Run the tournament test suite:
+
+    python tournament_test.py
+
+Exit the SSH session and shutdown the VM:
+
+    exit
+    vagrant halt
