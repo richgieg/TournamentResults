@@ -26,15 +26,17 @@ Clone the repository to your local system, then launch the VM:
 git clone http://github.com/richgieg/TournamentResults
 cd TournamentResults/vagrant
 vagrant up
-vagrant ssh
 ```
 
 *It may take several minutes for the VM to spin up when you're launching it for
 the first time, since the VM image is being fetched and the one-time
-configuration must take place. Please be patient.*
+configuration must take place. Please be patient. Once the process is complete,
+your terminal prompt will be returned, thus allowing you to execute the next
+steps.*
 
 Connect to the VM via SSH, create the database, then run the test suite:
 ```
+vagrant ssh
 cd /vagrant/tournament
 psql -f tournament.sql
 python tournament_test.py
