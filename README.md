@@ -27,23 +27,23 @@ Clone the repository to your local system:
 
 Launch the VM:
 
-    cd TournamentResults/vagrant
-    vagrant up
+```cd TournamentResults/vagrant
+vagrant up```
 
 Connect to the VM via SSH:
 
-    vagrant ssh
+```vagrant ssh```
 
 Create the tournament database:
 
-    cd /vagrant/tournament
-    psql -f tournament.sql
+```cd /vagrant/tournament
+psql -f tournament.sql```
 
 Run the tournament test suite:
 
-    python tournament_test.py
+```python tournament_test.py```
 
 Exit the SSH session and shutdown the VM:
 
-    exit
-    vagrant halt
+```exit
+vagrant halt```
