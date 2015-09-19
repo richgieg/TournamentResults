@@ -22,7 +22,6 @@ code that will use it."
 Use a command line terminal for the following steps.
 
 Clone the repository to your local system:
-
 ```
 git clone http://github.com/richgieg/TournamentResults
 ```
