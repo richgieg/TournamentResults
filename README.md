@@ -25,10 +25,6 @@ Clone the repository to your local system, launch the VM, then connect to the VM
 via SSH:
 ```
 git clone http://github.com/richgieg/TournamentResults
-```
-
-Launch the VM:
-```
 cd TournamentResults/vagrant
 vagrant up
 ```
