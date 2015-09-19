@@ -88,7 +88,6 @@ Example of the expected output:
 Success!  All tests pass!
 
 ```
-
 **Exit the SSH session and shutdown the VM:**
 ```
 exit
